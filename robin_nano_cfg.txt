@@ -1,56 +1,56 @@
-#===================¸ß¼¶¹¦ÄÜÉèÖÃ=======================================
->cfg_insert_det_module			0			#½ÓÈë¶Ïµç¼ì²âÄ£¿é(1:mks 220det;0:mks pwc)
+#===================Advanced feature settings=======================================
+>cfg_insert_det_module			0			#Connect to the power failure detection module(1:mks 220det;0:mks pwc)
 
->cfg_have_ups_device			0			#»úÆ÷ÊÇ·ñÅä±¸UPSµçÔ´(1:ÊÇ;0:·ñ)
+>cfg_have_ups_device			0			#Whether the machine is equipped with UPS power supply (1: yes; 0: no)
 
->cfg_print_over_auto_close		0			#´òÍê¹Ø»úÅäÖÃ(1:¿ªÆô£»0:¹Ø±Õ)¡£Ğè´îÅä¡°´òÍê¹Ø»úÄ£¿é¡±Ê¹ÓÃ
+>cfg_print_over_auto_close		0			#Print shutdown configuration (1: open; 0: close). It needs to be used with the "Shutdown Module"
 
->cfg_filament_det0_trigger_level	0			#E0¶ÏÁÏ¼ì²â½Ó¿ÚµÄ´¥·¢µçÆ½ÅäÖÃ(1:¸ßµçÆ½´¥·¢;0:µÍµçÆ½´¥·¢)
->cfg_filament_det1_trigger_level	0			#E1¶ÏÁÏ¼ì²â½Ó¿ÚµÄ´¥·¢µçÆ½ÅäÖÃ(1:¸ßµçÆ½´¥·¢;0:µÍµçÆ½´¥·¢)
+>cfg_filament_det0_trigger_level	0			#E0 trigger level configuration of material breaking detection interface (1: high level trigger; 0: low level trigger)
+>cfg_filament_det1_trigger_level	0			#E1 trigger level configuration of material breaking detection interface (1: high level trigger; 0: low level trigger)
 
->cfg_filament_load_length		100			#"»»ÁÏ"½øÁÏµÄ³¤¶È
->cfg_filament_load_speed		300			#"»»ÁÏ"½øÁÏËÙ¶ÈÅäÖÃ(mm/min)
->cfg_filament_load_limit_temperature	200			#"»»ÁÏ"½øÁÏ×îµÍÏŞÖÆÎÂ¶ÈÅäÖÃ
+>cfg_filament_load_length		100			#The length of "refill" feed
+>cfg_filament_load_speed		300			#"Filament refill" feed speed configuration (mm/min)
+>cfg_filament_load_limit_temperature	200			#"Refueling" feed minimum limit temperature configuration
 
->cfg_filament_unload_length		100			#"»»ÁÏ"ÍËÁÏµÄ³¤¶È
->cfg_filament_unload_speed		300			#"»»ÁÏ"ÍËÁÏËÙ¶ÈÅäÖÃ(mm/min)
->cfg_filament_unload_limit_temperature	200			#"»»ÁÏ"ÍËÁÏ×îµÍÏŞÖÆÎÂ¶ÈÅäÖÃ
+>cfg_filament_unload_length		100			#"Filament" unload length
+>cfg_filament_unload_speed		300			#"Filament" unload speed configuration (mm/min)
+>cfg_filament_unload_limit_temperature	200			#"Filament" unload minimum limit temperature configuration
 
-#=========================== µ÷Æ½°´Å¥ÅäÖÃ  =============================
+#=========================== Leveling Button Configuration   =============================
 
->cfg_leveling_mode			0			#µ÷Æ½Ä£Ê½ÅäÖÃ¡¶1:×Ô¶¯µ÷Æ½£»0:ÊÖ¶¯µ÷Æ½¡·
+>cfg_leveling_mode			0			#leveling mode configuration "1: automatic leveling; 0: manual leveling"
 
-#=========================== ÊÖ¶¯µ÷Æ½ ==================================
+#=========================== Manual Leveling ==================================
 
->cfg_point_number			5			#ÊÖ¶¯µ÷Æ½µÄ¸öÊı:(¿ÉÉè3,4,5¸öµã)
+>cfg_point_number			5			#The number of manual leveling: (3,4,5 points can be set)
 
->cfg_point1:30,30						
+>cfg_point1:30,30
 >cfg_point2:200,30
->cfg_point3:200,200						#ÊÖ¶¯µ÷Æ½Ê±µÄ5¸öµãµÄÎ»ÖÃ×ø±ê
+>cfg_point3:200,200						#The position coordinates of 5 points during manual leveling
 >cfg_point4:30,200
 >cfg_point5:115,115
 
-#========================== ×Ô¶¯µ÷Æ½ ===================================
+#========================== automatic leveling ===================================
 
 >cfg_auto_leveling_cmd:G28;G29;
 
-#===================ÓïÑÔÉèÖÃ==========================================
->cfg_language_adjust_type		1	#ÓïÑÔÇĞ»»·½Ê½ÅäÖÃ(1:ÆÁÄ»°´Å¥ÇĞ»»ÓïÑÔ,0:ÅäÖÃÎÄ¼şÑ¡ÏîÇĞ»»ÓïÑÔ).
+#=================== Language Settings =======================================
+>cfg_language_adjust_type		1	#Language switch mode configuration (1: screen button switch language, 0: configuration file option switch language).
 
->cfg_language_type			2	#ÓïÑÔ(1:¼òÌåÖĞÎÄ;2:·±ÌåÖĞÎÄ;3:Ó¢ÎÄ;4:¶íÓï;5:Î÷°àÑÀÓï,6:·¨Óï,7:Òâ´óÀûÓï)£¬
-						#´ËÅäÖÃÖ»ÓĞÔÚcfg_multiple_languageÉèÖÃÎª0Ê±ÓĞĞ§.
-#==================×Ô¶¨Òå¹¦ÄÜ°´Å¥¶¨ÖÆ=================================
-#ÉèÖÃ½çÃæ×Ô¶¨Òå¹¦ÄÜ1
->setmenu_func1_display		0		#1:ÏÔÊ¾°´Å¥£¬0:²»ÏÔÊ¾°´Å¥
+>cfg_language_type			2	#Language (1: Simplified Chinese; 2: Traditional Chinese; 3: English; 4: Russian; 5: Spanish, 6: French, 7: Italian),
+						#This configuration is only valid when cfg_multiple_language is set to 0.
+#================== Custom Function Button Customization =================================
+#Set interface custom function 1
+>setmenu_func1_display		0		#1: display button, 0: not display button
 
-#Ã¿ÌõÖ¸Áî±ØĞëÓÃ·ÖºÅ";"¸ô¿ª
+#Each instruction must be separated by a semicolon ";"
 >setmenu_func1:M84;
 
->moreitem_pic_cnt		3		#"¸ü¶à"°´Å¥ÊıÁ¿
+>moreitem_pic_cnt		3		#Number of "more" buttons
 
-#°´Å¥1~°´Å¥7¶¨ÖÆÖ¸Áî
-#Ã¿ÌõÖ¸Áî±ØĞëÓÃ·ÖºÅ";"¸ô¿ª
-#Ã¿¸ö°´Å¥ÉèÖÃÖ¸Áî×î´ó±ØĞëĞ¡ÓÚ200×Ö½Ú
+#Button 1~Button 7 custom commands
+#Each instruction must be separated by a semicolon ";"
+#Each button setting instruction must be less than 200 bytes at most
 >moreitem_button1_cmd:M104 S205;M140 S60;
 
 >moreitem_button2_cmd:M104 S235;M140 S75;
@@ -65,10 +65,10 @@
 
 >moreitem_button7_cmd:G28 X0;G28 Y0;G28 Z0;
 
-#´òÓ¡½çÃæ"¸ü¶à"°´Å¥ÊıÁ¿
+#Print interface "more" button quantity
 >morefunc_cnt			0
 
-#°´Å¥1~°´Å¥6¹¦ÄÜÅäÖÃ
+#Button 1~Button 6 function configuration
 >morefunc1_cmd:G28;
 >morefunc2_cmd:G28;
 >morefunc3_cmd:G28;
@@ -76,41 +76,41 @@
 >morefunc5_cmd:G28;
 
 #-------------------------------------------------------------
-########  ÏÔÊ¾Ğ§¹û¶¨ÖÆ£¨°´¼üÓëLOGO¶¨ÖÆÇë¿´ËµÃ÷Êé£© ##########
+######## Display effect customization (please refer to the manual for button and LOGO customization) ##########
 
->cfg_background_color		0x000000	#ÆÁÄ»±³¾°É«
->cfg_title_color		0xFFFFFF	#±êÌâÎÄ×Ö
->cfg_state_bkcolor		0x000000	#×´Ì¬À¸±³¾°É«
->cfg_state_textcolor		0xFFFFFF	#×´Ì¬À¸×ÖÌåÑÕÉ«
->cfg_filename_bkcolor		0x000000	#ÎÄ¼şÄ¿Â¼°´Å¥±³¾°É«
->cfg_filename_textcolor		0xFFFFFF	#ÎÄ¼şÄ¿Â¼°´Å¥×ÖÌåÑÕÉ«
->cfg_btn_bkcolor		0x000000	#Í¨ÓÃ°´Å¥±³¾°É«
->cfg_btn_textcolor		0xFFFFFF	#Í¨ÓÃ°´Å¥ÎÄ×ÖÑÕÉ«
->cfg_state_btn_bkcolor		0x000000	#×´Ì¬°´Å¥±³¾°É«
->cfg_state_btn_textcolor	0xFFFFFF	#×´Ì¬°´Å¥×ÖÌåÑÕÉ«
->cfg_back_btn_bkcolor		0x000000	#"·µ»Ø"¼ü±³¾°É«
->cfg_back_btn_textcolor		0xFFFFFF	#"·µ»Ø"¼ü×ÖÌåÑÕÉ«
->cfg_sel_btn_bkcolor		0x000000	#Ñ¡¶¨°´Å¥±³¾°É«
->cfg_sel_btn_textcolor		0xFFFFFF	#Ñ¡¶¨°´Å¥×ÖÌåÑÕÉ«
->cfg_dialog_btn_bkcolor		0xff0000	#¶Ô»°¿ò°´Å¥±³¾°É«
->cfg_dialog_btn_textcolor	0xFFFFFF	#¶Ô»°¿ò°´Å¥×ÖÌåÑÕÉ«
+>cfg_background_color		0x000000	#screen background color
+>cfg_title_color		0xFFFFFF	#title text
+>cfg_state_bkcolor		0x000000	#Status bar background color
+>cfg_state_textcolor		0xFFFFFF	#Status bar font color
+>cfg_filename_bkcolor		0x000000	#Background color of file directory button
+>cfg_filename_textcolor		0xFFFFFF	#File directory button font color
+>cfg_btn_bkcolor		0x000000	#General button background color
+>cfg_btn_textcolor		0xFFFFFF	#Common button text color
+>cfg_state_btn_bkcolor		0x000000	#Status button background color
+>cfg_state_btn_textcolor	0xFFFFFF	#state button font color
+>cfg_back_btn_bkcolor		0x000000	# "Back" key background color
+>cfg_back_btn_textcolor		0xFFFFFF	# "Back" key font color
+>cfg_sel_btn_bkcolor		0x000000	#Background color of selected button
+>cfg_sel_btn_textcolor		0xFFFFFF	#Select button font color
+>cfg_dialog_btn_bkcolor		0xff0000	#dialog button background color
+>cfg_dialog_btn_textcolor	0xFFFFFF	#dialog button font color
 
->cfg_btn_text_offset		7		#°´Å¥×ÖÌåÆ«ÒÆµ×±ßÎ»ÖÃ(µ¥Î»:ÏñËØ)
+>cfg_btn_text_offset		7		# Button font offset bottom edge position (unit: pixel)
 
->cfg_screen_display_mode	0		#ÆÁÄ»Ê×Ò³ÏÔÊ¾Ä£Ê½(0:¾­µäÄ£Ê½£¬1:¼òÔ¼Ä£Ê½)
+>cfg_screen_display_mode	0		#screen home display mode (0: classic mode, 1: simple mode)
 
-#============================= »ù±¾ÉèÖÃ =========================
+#============================= Basic Settings =========================
 
->MACHINETPYE  0		#»úĞÍÉèÖÃ,0:Cartesian; 1:DELTA ; 2:COREXY
+>MACHINETPYE  0		#model setting, 0:Cartesian; 1:DELTA; 2:COREXY
 
->HAS_TEMP_BED 1	        #¿ªÆôÈÈ´²(1:¿ªÆô,0:½ûÖ¹)
+>HAS_TEMP_BED 1	        # Turn on the hot bed (1: open, 0: disabled)
 
->EXTRUDERS    1		#ÅäÖÃ¼·³öÍ·ÊıÁ¿
+>EXTRUDERS    1		# Configure the number of extrusion heads
 
->Z2_STEPPER_DRIVERS	0	#Ê¹ÄÜË«Z¹¦ÄÜ,1:¿ªÆô;0:½ûÖ¹
+>Z2_STEPPER_DRIVERS	0	#Enable double Z function, 1: enable; 0: disable
 
 
-# XYZÖáµÄĞĞ³Ì (µ¥Î»:mm)
+# Travel of XYZ axis (unit: mm)
 >X_MIN_POS -4.5
 >Y_MIN_POS 0
 >Z_MIN_POS 0
@@ -118,52 +118,52 @@
 >Y_MAX_POS 230
 >Z_MAX_POS 250
 
-# ÔİÍ£ºó¼·³öÍ·Í£Ö¹Î»ÖÃ
->FILAMENT_CHANGE_X_POS 5	 # XÎ»ÖÃ(¾ø¶Ô×ø±êÖµ)
->FILAMENT_CHANGE_Y_POS 5	 # YÎ»ÖÃ(¾ø¶Ô×ø±êÖµ)
->FILAMENT_CHANGE_Z_ADD 0	 # ZÎ»ÖÃ(Ïà¶Ô×ø±êÖµ)
+# Extrusion head stop position after pause
+>FILAMENT_CHANGE_X_POS 5	 # X position (absolute coordinate value)
+>FILAMENT_CHANGE_Y_POS 5	 # Y position (absolute coordinate value)
+>FILAMENT_CHANGE_Z_ADD 0	 # Z position (relative coordinate value)
 
-#Ê¹ÓÃË«Í·Ê±£¬µÚ¶ş¸ö¼·³öÍ·ÓëµÚÒ»¸ö¼·³öµÄXYÆ«ÒÆÖµ. 
->HOTEND_OFFSET_X 	0 		#xÖáÆ«ÒÆ(µ¥Î»:mm) 
->HOTEND_OFFSET_Y 	0  		#yÖáÆ«ÒÆ(µ¥Î»:mm) 
-#============================== ²½½øµç»úÉèÖÃ ============================
-#µç»ú·½ÏòÅäÖÃ.
+#When using double heads, the XY offset value of the second extrusion head and the first extrusion.
+>HOTEND_OFFSET_X 	0 		#x axis offset (unit: mm)
+>HOTEND_OFFSET_Y 	0  		#y-axis offset (unit: mm)
+#============================== Stepper motor settings ============================
+#Motor direction configuration.
 >INVERT_X_DIR 	                0	
 >INVERT_Y_DIR 	                0
 >INVERT_Z_DIR                	1
 >INVERT_E0_DIR           	1
 >INVERT_E1_DIR           	1
 
-#ÒÆ¶¯²ÎÊıÉèÖÃ
->DEFAULT_X_STEPS_PER_UNIT	160	#XÖáÄ¬ÈÏÂö³å (steps/mm)	
->DEFAULT_Y_STEPS_PER_UNIT	160	#YÖáÄ¬ÈÏÂö³å (steps/mm)	
->DEFAULT_Z_STEPS_PER_UNIT	800	#ZÖáÄ¬ÈÏÂö³å (steps/mm)	
->DEFAULT_E0_STEPS_PER_UNIT	400	#EÖáÄ¬ÈÏÂö³å (steps/mm)	
->DEFAULT_E1_STEPS_PER_UNIT	400	#EÖáÄ¬ÈÏÂö³å (steps/mm)	
+# Mobile parameter settings
+>DEFAULT_X_STEPS_PER_UNIT	160	#X axis default pulse (steps/mm)
+>DEFAULT_Y_STEPS_PER_UNIT	160	#Y-axis default pulse (steps/mm)
+>DEFAULT_Z_STEPS_PER_UNIT	800	#Z axis default pulse (steps/mm)
+>DEFAULT_E0_STEPS_PER_UNIT	400	#E-axis default pulse (steps/mm)
+>DEFAULT_E1_STEPS_PER_UNIT	400	#E axis default pulse (steps/mm)
 
->DEFAULT_X_MAX_FEEDRATE		200	#XÖáÄ¬ÈÏËÙ¶È (mm/s)		
->DEFAULT_Y_MAX_FEEDRATE		200	#YÖáÄ¬ÈÏËÙ¶È (mm/s)		
->DEFAULT_Z_MAX_FEEDRATE		4	#ZÖáÄ¬ÈÏËÙ¶È (mm/s)		
->DEFAULT_E0_MAX_FEEDRATE		70	#EÖáÄ¬ÈÏËÙ¶È (mm/s)		
->DEFAULT_E1_MAX_FEEDRATE		70	#EÖáÄ¬ÈÏËÙ¶È (mm/s)	
+>DEFAULT_X_MAX_FEEDRATE		200	#X axis default speed (mm/s)
+>DEFAULT_Y_MAX_FEEDRATE		200	#Y-axis default speed (mm/s)
+>DEFAULT_Z_MAX_FEEDRATE		4	#Z axis default speed (mm/s)
+>DEFAULT_E0_MAX_FEEDRATE		70	#E axis default speed (mm/s)
+>DEFAULT_E1_MAX_FEEDRATE		70	#E axis default speed (mm/s)
 
->DEFAULT_X_MAX_ACCELERATION	500	#XÖáÄ¬ÈÏ×î´ó¼ÓËÙ¶È (change/s) change = mm/s
->DEFAULT_Y_MAX_ACCELERATION	500	#YÖáÄ¬ÈÏ×î´ó¼ÓËÙ¶È (change/s) change = mm/s
->DEFAULT_Z_MAX_ACCELERATION	100	#ZÖáÄ¬ÈÏ×î´ó¼ÓËÙ¶È (change/s) change = mm/s
->DEFAULT_E0_MAX_ACCELERATION	1000	#EÖáÄ¬ÈÏ×î´ó¼ÓËÙ¶È (change/s) change = mm/s
->DEFAULT_E1_MAX_ACCELERATION	1000	#EÖáÄ¬ÈÏ×î´ó¼ÓËÙ¶È (change/s) change = mm/s
+>DEFAULT_X_MAX_ACCELERATION	500	#X-axis default maximum acceleration (change/s) change = mm/s
+>DEFAULT_Y_MAX_ACCELERATION	500	#Y-axis default maximum acceleration (change/s) change = mm/s
+>DEFAULT_Z_MAX_ACCELERATION	100	#Z-axis default maximum acceleration (change/s) change = mm/s
+>DEFAULT_E0_MAX_ACCELERATION	1000	#E-axis default maximum acceleration (change/s) change = mm/s
+>DEFAULT_E1_MAX_ACCELERATION	1000	#E-axis default maximum acceleration (change/s) change = mm/s
 
->DEFAULT_ACCELERATION		500	#X,Y,Z,E ´òÓ¡Ê±µÄÄ¬ÈÏ¼ÓËÙ¶È		
->DEFAULT_RETRACT_ACCELERATION	500	#X,Y,Z,E »Ø³éÄ¬ÈÏ¼ÓËÙ¶È		
->DEFAULT_TRAVEL_ACCELERATION	500	#X,Y,Z ·Ç´òÓ¡Ê±µÄÄ¬ÈÏ¼ÓËÙ¶È	
->DEFAULT_MINIMUMFEEDRATE	0.0	#Ä¬ÈÏ×îĞ¡ËÙ¶È						
->DEFAULT_MINSEGMENTTIME		20000	#»º´æ¿ÕÊ±£¬Ò»¸öÒÆ¶¯ËùĞèµÄ×îĞ¡Ê±¼ä(µ¥Î»ms). 
->DEFAULT_MINTRAVELFEEDRATE	0.0	#		
+>DEFAULT_ACCELERATION		500	#X,Y,Z,E Default acceleration when printing
+>DEFAULT_RETRACT_ACCELERATION	500	#X,Y,Z,E Retract default acceleration
+>DEFAULT_TRAVEL_ACCELERATION	500	#X,Y,Z Default acceleration when not printing
+>DEFAULT_MINIMUMFEEDRATE	0.0	#Default minimum speed
+>DEFAULT_MINSEGMENTTIME		20000	#When the cache is empty, the minimum time required for a movement (in ms).
+>DEFAULT_MINTRAVELFEEDRATE	0.0	#
 
->DEFAULT_XJERK 			20.0	#Ä¬ÈÏXÖá Jerk (mm/s)	
->DEFAULT_YJERK 			20.0	#Ä¬ÈÏYÖá Jerk (mm/s)	
->DEFAULT_ZJERK 			0.4	#Ä¬ÈÏZÖá Jerk (mm/s)	
->DEFAULT_EJERK 			5.0	#Ä¬ÈÏEÖá Jerk (mm/s)	
+>DEFAULT_XJERK 			20.0	#Default X-axis Jerk (mm/s)
+>DEFAULT_YJERK 			20.0	#Default Y-axis Jerk (mm/s)
+>DEFAULT_ZJERK 			0.4	#Default Z-axis Jerk (mm/s)
+>DEFAULT_EJERK 			5.0	#Default E-axis Jerk (mm/s)
 
 #For Inverting Stepper Enable Pins  (0:Low,1:High)
 >X_ENABLE_ON		0
@@ -171,104 +171,104 @@
 >Z_ENABLE_ON		0
 >E_ENABLE_ON		0
 
-#============================= ÈÈÃôÉèÖÃ ============================
->TEMP_SENSOR_0		1		#1: 100kÈÈÃô£»-3 : MAX31855ÈÈµçÅ¼
+#============================= Thermal settings ============================
+>TEMP_SENSOR_0		1		#1: 100k thermal sensor; -3 : MAX31855 thermocouple
 
->EXTRUDE_MINTEMP 	170		#´òÓ¡Ê±,¼·³ö»ú×îµÍÎÂ¶È(Æğ±£»¤×÷ÓÃ)
->HEATER_0_MINTEMP	-5		#¼·³ö0×îĞ¡ÎÂ¶ÈÖµ
->HEATER_0_MAXTEMP 	269		#¼·³ö0×î´óÎÂ¶ÈÖµ
->HEATER_1_MINTEMP	-5		#¼·³ö1×îĞ¡ÎÂ¶ÈÖµ
->HEATER_1_MAXTEMP 	269		#¼·³ö1×î´óÎÂ¶ÈÖµ
->BED_MAXTEMP 		99		#ÈÈ´²×î´óÎÂ¶ÈÖµ
->BED_MINTEMP		-5		#ÈÈ´²×îĞ¡ÎÂ¶ÈÖµ
+>EXTRUDE_MINTEMP 	170		#When printing, the minimum temperature of the extruder (for protection)
+>HEATER_0_MINTEMP	-5		#Extrusion 0 minimum temperature value
+>HEATER_0_MAXTEMP 	269		#Extrusion 0 maximum temperature value
+>HEATER_1_MINTEMP	-5		#extrusion 1 minimum temperature value
+>HEATER_1_MAXTEMP 	269		#Extrusion 1 maximum temperature value
+>BED_MAXTEMP 		99		#The maximum temperature of the hot bed
+>BED_MINTEMP		-5		#The minimum temperature of the hot bed
 
-#======================== ÈÈÃô±£»¤ÅäÖÃ =======================
->THERMAL_PROTECTION_PERIOD 		70     #µ¥Î»:Ãë;µ±»úÆ÷Æµ·±³öÏÖErr7Ê±,¿ÉÊÊµ±¼Ó´óµ±Ç°Öµ;
->THERMAL_PROTECTION_HYSTERESIS 		5     	#µ¥Î»:¡æ
->WATCH_TEMP_PERIOD 			70	#µ¥Î»:Ãë;µ±»úÆ÷Æµ·±³öÏÖErr5Ê±,¿ÉÊÊµ±¼Ó´óµ±Ç°Öµ
->WATCH_TEMP_INCREASE 			2	#µ¥Î»:¡æ
->THERMAL_PROTECTION_BED_PERIOD 		70    	#µ¥Î»:Ãë;µ±»úÆ÷Æµ·±³öÏÖErr7Ê±,¿ÉÊÊµ±¼Ó´óµ±Ç°Öµ
->THERMAL_PROTECTION_BED_HYSTERESIS 	5 	#µ¥Î»:¡æ
->WATCH_BED_TEMP_PERIOD 			70      #µ¥Î»:Ãë;µ±»úÆ÷Æµ·±³öÏÖErr6Ê±,¿ÉÊÊµ±¼Ó´óµ±Ç°Öµ
->WATCH_BED_TEMP_INCREASE 		2       #µ¥Î»:¡æ
+#======================== Thermal protection configuration =======================
+>THERMAL_PROTECTION_PERIOD 		70     #unit: second; when the machine frequently appears Err7, the current value can be appropriately increased;
+>THERMAL_PROTECTION_HYSTERESIS 		5     	#unit: â„ƒ
+>WATCH_TEMP_PERIOD 			70	#unit: second; when the machine frequently appears Err5, the current value can be appropriately increased
+>WATCH_TEMP_INCREASE 			2	#unit: â„ƒ
+>THERMAL_PROTECTION_BED_PERIOD 		70    	#unit: second; when Err7 occurs frequently on the machine, the current value can be appropriately increased
+>THERMAL_PROTECTION_BED_HYSTERESIS 	5 	#unit: â„ƒ
+>WATCH_BED_TEMP_PERIOD 			70      #unit: second; when Err6 occurs frequently on the machine, the current value can be appropriately increased
+>WATCH_BED_TEMP_INCREASE 		2       #unit: â„ƒ
 
-# ¼·³öÍ·ÎÂ¶Èµ÷¿Ø²ÎÊıÉèÖÃ.
->PIDTEMPE			1	# Ä£Ê½Ñ¡Ôñ£¬1:PID; 0:bang-bang
->DEFAULT_Kp			17.54	# PÖµÉèÖÃ
->DEFAULT_Ki			0.73	# IÖµÉèÖÃ
->DEFAULT_Kd			105.35	# DÖµÉèÖÃ
+# Extrusion head temperature control parameter settings.
+>PIDTEMPE			1	# mode selection, 1:PID; 0:bang-bang
+>DEFAULT_Kp			17.54	# P value setting
+>DEFAULT_Ki			0.73	# I value setting
+>DEFAULT_Kd			105.35	# D value setting
 
-#ÈÈ´²ÎÂ¶Èµ÷¿Ø²ÎÊıÉèÖÃ..
->PIDTEMPBED			0	# Ä£Ê½Ñ¡Ôñ£¬1:PID; 0:bang-bang
->DEFAULT_bedKp			10.00	# PÖµÉèÖÃ
->DEFAULT_bedKi			0.023	# IÖµÉèÖÃ
->DEFAULT_bedKd			305.4	# DÖµÉèÖÃ
-
-
-#============================== ÏŞÎ»¿ª¹ØÉèÖÃ ===========================
-
->MIN_SOFTWARE_ENDSTOPS	 1              # 0:½ûÖ¹ÈíÏŞÎ»;  1:¿ªÆôÈíÏŞÎ».
->MAX_SOFTWARE_ENDSTOPS 	 1              # 0:½ûÖ¹ÈíÏŞÎ»;  1:¿ªÆôÈíÏŞÎ».
-
-# ÅäÖÃÏŞÎ»¿ª¹ØµÄ½ÓÈëĞÅºÅ.
->X_MIN_ENDSTOP_INVERTING 1		# X_MINÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->Y_MIN_ENDSTOP_INVERTING 1		# Y_MINÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->Z_MIN_ENDSTOP_INVERTING 1		# Z_MINÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->X_MAX_ENDSTOP_INVERTING 1		# X_MAXÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->Y_MAX_ENDSTOP_INVERTING 1		# Y_MAXÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->Z_MAX_ENDSTOP_INVERTING 1		# Z_MAXÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
->Z_MIN_PROBE_ENDSTOP_INVERTING 1	# Z_PROBEÏŞÎ»¿ª¹Ø³£¿ª/³£±ÕÉèÖÃ.
->FIL_RUNOUT_INVERTING 	0		# ¶ÏÁÏ¿ª¹Ø³£¿ª/³£±ÕÑ¡Ôñ
-
-# Ö¸Ã÷ÏŞÎ»¿ª¹Ø»òÌ½ÕëµÄÊ¹ÓÃ½Ó¿Ú.
->USE_XMIN_PLUG	1			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
->USE_YMIN_PLUG	1			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
->USE_ZMIN_PLUG	1			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
->USE_XMAX_PLUG	0			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
->USE_YMAX_PLUG	0			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
->USE_ZMAX_PLUG	1			# 1:Ê¹ÓÃ; 0:²»Ê¹ÓÃ
+#Hot bed temperature control parameter setting..
+>PIDTEMPBED			0	# Mode selection, 1:PID; 0:bang-bang
+>DEFAULT_bedKp			10.00	# P value setting
+>DEFAULT_bedKi			0.023	# I value setting
+>DEFAULT_bedKd			305.4	# D value setting
 
 
-#==============================  »ØÁãÉèÖÃ ==============================
+#============================== Limit switch setting ===========================
 
->X_HOME_DIR -1				# XÖá»ØÁã·½Ïò; 1=MAX·½Ïò, -1=MIN·½Ïò :[-1,1]
->Y_HOME_DIR -1				# YÖá»ØÁã·½Ïò; 1=MAX·½Ïò, -1=MIN·½Ïò :[-1,1]
->Z_HOME_DIR -1				# ZÖá»ØÁã·½Ïò; 1=MAX·½Ïò, -1=MIN·½Ïò :[-1,1]
->HOMING_FEEDRATE_XY 2400                # XYÖá»ØÁãËÙ¶È (mm/m)
->HOMING_FEEDRATE_Z  600                 # ZÖá»ØÁãËÙ¶È (mm/m)
->HOME_Y_BEFORE_X	0       	# »ØÁãÊ±xyÖáµÄË³Ğò,0: XÏÈ»ØÁã; 1:YÏÈ»ØÁã£»
+>MIN_SOFTWARE_ENDSTOPS	 1              # 0: Disable soft limit; 1: Enable soft limit.
+>MAX_SOFTWARE_ENDSTOPS 	 1              # 0: Disable soft limit; 1: Enable soft limit.
+
+# Configure the access signal of the limit switch.
+>X_MIN_ENDSTOP_INVERTING 1		# X_MIN limit switch normally open/normally closed selection
+>Y_MIN_ENDSTOP_INVERTING 1		# Y_MIN limit switch normally open/normally closed selection
+>Z_MIN_ENDSTOP_INVERTING 1		# Z_MIN limit switch normally open/normally closed selection
+>X_MAX_ENDSTOP_INVERTING 1		# X_MAX limit switch normally open/normally closed selection
+>Y_MAX_ENDSTOP_INVERTING 1		# Y_MAX limit switch normally open/normally closed selection
+>Z_MAX_ENDSTOP_INVERTING 1		# Z_MAX limit switch normally open/normally closed selection
+>Z_MIN_PROBE_ENDSTOP_INVERTING 1	# Z_PROBE limit switch normally open/normally closed setting.
+>FIL_RUNOUT_INVERTING 	0		# normally open/normally closed selection of cutout switch
+
+# Specify the interface to use for limit switches or probes.
+>USE_XMIN_PLUG	1			# 1: use; 0: not use
+>USE_YMIN_PLUG	1			# 1: use; 0: not use
+>USE_ZMIN_PLUG	1			# 1: use; 0: not use
+>USE_XMAX_PLUG	0			# 1: use; 0: not use
+>USE_YMAX_PLUG	0			# 1: use; 0: not use
+>USE_ZMAX_PLUG	1			# 1: use; 0: not use
 
 
-#============================= ZÖáÌ½ÕëÉèÖÃ =============================
-#Ì½Õë½Ó¿ÚZ-Min»òZ-Max.
->Z_MIN_PROBE_PIN_MODE		2	# 0:²»Ê¹ÓÃ; 1:½ÓZ_MIN; 2:½ÓZMAX
+#============================== Return to zero setting ==============================
 
->Z_PROBE_OFFSET_FROM_EXTRUDER	0	# Z Æ«ÒÆ: -below +above  [the nozzle]		
->X_PROBE_OFFSET_FROM_EXTRUDER	0	# X Æ«ÒÆ: -left  +right  [of the nozzle]
->Y_PROBE_OFFSET_FROM_EXTRUDER	0	# Y Æ«ÒÆ: -front +behind [the nozzle]
->XY_PROBE_SPEED 		4000	# Ì½ÕëXYÖáÒÆ¶¯ËÙ¶È (mm/m) 
+>X_HOME_DIR -1				# X-axis home direction; 1=MAX direction, -1=MIN direction :[-1,1]
+>Y_HOME_DIR -1				# Y axis home direction; 1=MAX direction, -1=MIN direction :[-1,1]
+>Z_HOME_DIR -1				# Z axis home direction; 1=MAX direction, -1=MIN direction :[-1,1]
+>HOMING_FEEDRATE_XY 2400                # XY axis return to zero speed (mm/m)
+>HOMING_FEEDRATE_Z  600                 # Z-axis return to zero speed (mm/m)
+>HOME_Y_BEFORE_X	0       	# The order of the xy axis when returning to zero, 0: X returns to zero first; 1: Y returns to zero first;
+
+
+#============================= Z axis probe settings =============================
+# Probe interface Z-Min or Z-Max.
+>Z_MIN_PROBE_PIN_MODE		2	# 0: not used; 1: connected to Z_MIN; 2: connected to ZMAX
+
+>Z_PROBE_OFFSET_FROM_EXTRUDER	0	# Z offset: -below +above [the nozzle]
+>X_PROBE_OFFSET_FROM_EXTRUDER	0	# X offset: -left +right [of the nozzle]
+>Y_PROBE_OFFSET_FROM_EXTRUDER	0	# Y offset: -front +behind [the nozzle]
+>XY_PROBE_SPEED 		4000	# Probe XY axis moving speed (mm/m)
 >Z_PROBE_SPEED_FAST 		600	# Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 >Z_PROBE_SPEED_SLOW 		300	# Speed for the "accurate" probe of each point
 
 
-#=============================== ÈÈ´²µ÷Æ½ÉèÖÃ ==============================
+#=============================== Bed leveling settings ==============================
 
->BED_LEVELING_METHOD 		0	# 0:²»Ê¹ÓÃµ÷Æ½; 3:¶àµã×Ô¶¯µ÷Æ½; 5:ÊÖ¶¯Íø¸ñµ÷Æ½	
+>BED_LEVELING_METHOD 		0	# 0: do not use leveling; 3: multi-point automatic leveling; 5: manual grid leveling
 
->GRID_MAX_POINTS_X 		3	# xÖá·½Ê½µ÷Æ½µãÊı. <= 15
->GRID_MAX_POINTS_Y 		3	# yÖá·½Ïòµ÷Æ½µãÊı. <= 15	
->Z_CLEARANCE_DEPLOY_PROBE	20	# ZÖáÌ§Æğ/·ÅÏÂµÄ¾àÀë.> 0
->Z_CLEARANCE_BETWEEN_PROBES	20	# ZÖáÔÚÁ½¸öµ÷Æ½µãµÄµÄÒÆ¶¯¸ß¶È. > 0
+>GRID_MAX_POINTS_X 		3	# x-axis leveling points. <= 15
+>GRID_MAX_POINTS_Y 		3	# Leveling points in the y-axis direction. <= 15
+>Z_CLEARANCE_DEPLOY_PROBE	20	# Z-axis lifting/lowering distance. > 0
+>Z_CLEARANCE_BETWEEN_PROBES	20	# The moving height of the Z axis at the two leveling points. > 0
 
-# ÉèÖÃÌ½ÕëÄÜ¹»µ½´ïÈÈ´²µÄ±ß½ç¾àÀë.
+# Sets the distance the probe can reach the edge of the bed.
 >LEFT_PROBE_BED_POSITION 	30	
 >RIGHT_PROBE_BED_POSITION 	180
 >FRONT_PROBE_BED_POSITION 	30	
 >BACK_PROBE_BED_POSITION 	180
 
->MESH_INSET			20	# MESH_BED_LEVELINGµ÷Æ½Ä£Ê½ÏÂ±ß½ç¾àÀë·¶Î§
+>MESH_INSET			20	# MESH_BED_LEVELING leveling mode boundary distance range
 
-#============================== Delta»úĞÍÉèÖÃ =============================
+#============================== Delta model settings =============================
 >DELTA_SEGMENTS_PER_SECOND	40      #--default
 >DELTA_DIAGONAL_ROD		346.75	#Center-to-center distance of the holes in the diagonal push rods.	
 >DELTA_SMOOTH_ROD_OFFSET	211.5	#Horizontal offset from middle of printer to smooth rod center.
@@ -279,10 +279,10 @@
 >DELTA_PRINTABLE_RADIUS		125	#Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
 >DELTA_CALIBRATION_RADIUS	100	#set the radius for the calibration probe points - max 0.8 * DELTA_PRINTABLE_RADIUS 
 
-#============================= ZÖáÌ½ÕëÉèÖÃ =============================
->BLTOUCH			0	# 0:½ûÓÃBLTOUCH; 1:ÆôÓÃBLTOUCH
+#============================= Z axis probe settings =============================
+>BLTOUCH			0	 0: disable BLTOUCH; 1: enable BLTOUCH
 
-#¹ØÓÚĞÅÏ¢
+# about information
 >about_type:Robin_nano24
 >about_version:V3.4.5
 >about_company:Hellbot

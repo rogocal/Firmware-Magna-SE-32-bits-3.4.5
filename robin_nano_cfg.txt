@@ -18,7 +18,7 @@
 
 #=========================== Leveling Button Configuration   =============================
 
->cfg_leveling_mode			0			#leveling mode configuration "1: automatic leveling; 0: manual leveling"
+>cfg_leveling_mode			1			#leveling mode configuration "1: automatic leveling; 0: manual leveling"
 
 #=========================== Manual Leveling ==================================
 
@@ -37,7 +37,7 @@
 #=================== Language Settings =======================================
 >cfg_language_adjust_type		1	#Language switch mode configuration (1: screen button switch language, 0: configuration file option switch language).
 
->cfg_language_type			2	#Language (1: Simplified Chinese; 2: Traditional Chinese; 3: English; 4: Russian; 5: Spanish, 6: French, 7: Italian),
+>cfg_language_type			3	#Language (1: Simplified Chinese; 2: Traditional Chinese; 3: English; 4: Russian; 5: Spanish, 6: French, 7: Italian),
 						#This configuration is only valid when cfg_multiple_language is set to 0.
 #================== Custom Function Button Customization =================================
 #Set interface custom function 1
@@ -46,7 +46,7 @@
 #Each instruction must be separated by a semicolon ";"
 >setmenu_func1:M84;
 
->moreitem_pic_cnt		3		#Number of "more" buttons
+>moreitem_pic_cnt		7		#Number of "more" buttons
 
 #Button 1~Button 7 custom commands
 #Each instruction must be separated by a semicolon ";"
@@ -59,11 +59,11 @@
 
 >moreitem_button4_cmd:G28 X0;G28 Y0;G28 Z0;
 
->moreitem_button5_cmd:G28 X0;G28 Y0;G28 Z0;
+>moreitem_button5_cmd:M106 S255;M303 E0 S200 U1;M107; # PID autotune hotend
 
->moreitem_button6_cmd:G28 X0;G28 Y0;G28 Z0;
+>moreitem_button6_cmd:M106 S255;M303 E-1 S60 U1;M107; # PID autotune bed
 
->moreitem_button7_cmd:G28 X0;G28 Y0;G28 Z0;
+>moreitem_button7_cmd:M500; # Save to eeprom
 
 #Print interface "more" button quantity
 >morefunc_cnt			0
@@ -194,15 +194,15 @@
 
 # Extrusion head temperature control parameter settings.
 >PIDTEMPE			1	# mode selection, 1:PID; 0:bang-bang
->DEFAULT_Kp			17.54	# P value setting
->DEFAULT_Ki			0.73	# I value setting
->DEFAULT_Kd			105.35	# D value setting
+>DEFAULT_Kp			18.01	# P value setting
+>DEFAULT_Ki			0.78	# I value setting
+>DEFAULT_Kd			103.37	# D value setting
 
 #Hot bed temperature control parameter setting..
 >PIDTEMPBED			0	# Mode selection, 1:PID; 0:bang-bang
->DEFAULT_bedKp			10.00	# P value setting
->DEFAULT_bedKi			0.023	# I value setting
->DEFAULT_bedKd			305.4	# D value setting
+>DEFAULT_bedKp			439.63	# P value setting
+>DEFAULT_bedKi			75.8	# I value setting
+>DEFAULT_bedKd			637.47	# D value setting
 
 
 #============================== Limit switch setting ===========================
@@ -243,27 +243,27 @@
 # Probe interface Z-Min or Z-Max.
 >Z_MIN_PROBE_PIN_MODE		2	# 0: not used; 1: connected to Z_MIN; 2: connected to ZMAX
 
->Z_PROBE_OFFSET_FROM_EXTRUDER	0	# Z offset: -below +above [the nozzle]
->X_PROBE_OFFSET_FROM_EXTRUDER	0	# X offset: -left +right [of the nozzle]
->Y_PROBE_OFFSET_FROM_EXTRUDER	0	# Y offset: -front +behind [the nozzle]
->XY_PROBE_SPEED 		4000	# Probe XY axis moving speed (mm/m)
+>Z_PROBE_OFFSET_FROM_EXTRUDER	-1.12	# Z offset: -below +above [the nozzle]
+>X_PROBE_OFFSET_FROM_EXTRUDER	-42	# X offset: -left +right [of the nozzle]
+>Y_PROBE_OFFSET_FROM_EXTRUDER	-5	# Y offset: -front +behind [the nozzle]
+>XY_PROBE_SPEED 		6000	# Probe XY axis moving speed (mm/m)
 >Z_PROBE_SPEED_FAST 		600	# Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 >Z_PROBE_SPEED_SLOW 		300	# Speed for the "accurate" probe of each point
 
 
 #=============================== Bed leveling settings ==============================
 
->BED_LEVELING_METHOD 		0	# 0: do not use leveling; 3: multi-point automatic leveling; 5: manual grid leveling
+>BED_LEVELING_METHOD 		3	# 0: do not use leveling; 3: multi-point automatic leveling; 5: manual grid leveling
 
->GRID_MAX_POINTS_X 		3	# x-axis leveling points. <= 15
->GRID_MAX_POINTS_Y 		3	# Leveling points in the y-axis direction. <= 15
->Z_CLEARANCE_DEPLOY_PROBE	20	# Z-axis lifting/lowering distance. > 0
->Z_CLEARANCE_BETWEEN_PROBES	20	# The moving height of the Z axis at the two leveling points. > 0
+>GRID_MAX_POINTS_X 		5	# x-axis leveling points. <= 12
+>GRID_MAX_POINTS_Y 		5	# Leveling points in the y-axis direction. <= 12
+>Z_CLEARANCE_DEPLOY_PROBE	10	# Z-axis lifting/lowering distance. > 0
+>Z_CLEARANCE_BETWEEN_PROBES	5	# The moving height of the Z axis at the two leveling points. > 0
 
 # Sets the distance the probe can reach the edge of the bed.
->LEFT_PROBE_BED_POSITION 	30	
+>LEFT_PROBE_BED_POSITION 	20	
 >RIGHT_PROBE_BED_POSITION 	180
->FRONT_PROBE_BED_POSITION 	30	
+>FRONT_PROBE_BED_POSITION 	20	
 >BACK_PROBE_BED_POSITION 	180
 
 >MESH_INSET			20	# MESH_BED_LEVELING leveling mode boundary distance range
@@ -280,7 +280,7 @@
 >DELTA_CALIBRATION_RADIUS	100	#set the radius for the calibration probe points - max 0.8 * DELTA_PRINTABLE_RADIUS 
 
 #============================= Z axis probe settings =============================
->BLTOUCH			0	 0: disable BLTOUCH; 1: enable BLTOUCH
+>BLTOUCH			1	# 0: disable BLTOUCH; 1: enable BLTOUCH
 
 # about information
 >about_type:Robin_nano24

@@ -114,7 +114,7 @@
 >X_MIN_POS -4.5
 >Y_MIN_POS 0
 >Z_MIN_POS 0
->X_MAX_POS 230
+>X_MAX_POS 245
 >Y_MAX_POS 230
 >Z_MAX_POS 250
 
@@ -243,7 +243,7 @@
 # Probe interface Z-Min or Z-Max.
 >Z_MIN_PROBE_PIN_MODE		2	# 0: not used; 1: connected to Z_MIN; 2: connected to ZMAX
 
->Z_PROBE_OFFSET_FROM_EXTRUDER	-1.12	# Z offset: -below +above [the nozzle]
+>Z_PROBE_OFFSET_FROM_EXTRUDER	-1.11	# Z offset: -below +above [the nozzle]
 >X_PROBE_OFFSET_FROM_EXTRUDER	-42	# X offset: -left +right [of the nozzle]
 >Y_PROBE_OFFSET_FROM_EXTRUDER	-5	# Y offset: -front +behind [the nozzle]
 >XY_PROBE_SPEED 		6000	# Probe XY axis moving speed (mm/m)
@@ -256,17 +256,17 @@
 >BED_LEVELING_METHOD 		3	# 0: do not use leveling; 3: multi-point automatic leveling; 5: manual grid leveling
 
 >GRID_MAX_POINTS_X 		5	# x-axis leveling points. <= 12
->GRID_MAX_POINTS_Y 		5	# Leveling points in the y-axis direction. <= 12
+>GRID_MAX_POINTS_Y 		6	# Leveling points in the y-axis direction. <= 12
 >Z_CLEARANCE_DEPLOY_PROBE	10	# Z-axis lifting/lowering distance. > 0
 >Z_CLEARANCE_BETWEEN_PROBES	5	# The moving height of the Z axis at the two leveling points. > 0
 
 # Sets the distance the probe can reach the edge of the bed.
->LEFT_PROBE_BED_POSITION 	20	
->RIGHT_PROBE_BED_POSITION 	180
->FRONT_PROBE_BED_POSITION 	20	
->BACK_PROBE_BED_POSITION 	180
+>LEFT_PROBE_BED_POSITION 	30
+>RIGHT_PROBE_BED_POSITION 	200
+>FRONT_PROBE_BED_POSITION 	15
+>BACK_PROBE_BED_POSITION 	215
 
->MESH_INSET			20	# MESH_BED_LEVELING leveling mode boundary distance range
+>MESH_INSET			10	# MESH_BED_LEVELING leveling mode boundary distance range
 
 #============================== Delta model settings =============================
 >DELTA_SEGMENTS_PER_SECOND	40      #--default

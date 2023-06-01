@@ -194,9 +194,9 @@
 
 # Extrusion head temperature control parameter settings.
 >PIDTEMPE			1	# mode selection, 1:PID; 0:bang-bang
->DEFAULT_Kp			18.01	# P value setting
->DEFAULT_Ki			0.78	# I value setting
->DEFAULT_Kd			103.37	# D value setting
+>DEFAULT_Kp			17.46	# P value setting
+>DEFAULT_Ki			0.79	# I value setting
+>DEFAULT_Kd			97.01	# D value setting
 
 #Hot bed temperature control parameter setting..
 >PIDTEMPBED			0	# Mode selection, 1:PID; 0:bang-bang
@@ -243,7 +243,7 @@
 # Probe interface Z-Min or Z-Max.
 >Z_MIN_PROBE_PIN_MODE		2	# 0: not used; 1: connected to Z_MIN; 2: connected to ZMAX
 
->Z_PROBE_OFFSET_FROM_EXTRUDER	-1.07	# Z offset: -below +above [the nozzle]
+>Z_PROBE_OFFSET_FROM_EXTRUDER	-1.43	# Z offset: -below +above [the nozzle]
 >X_PROBE_OFFSET_FROM_EXTRUDER	-42	# X offset: -left +right [of the nozzle]
 >Y_PROBE_OFFSET_FROM_EXTRUDER	-5	# Y offset: -front +behind [the nozzle]
 >XY_PROBE_SPEED 		6000	# Probe XY axis moving speed (mm/m)
